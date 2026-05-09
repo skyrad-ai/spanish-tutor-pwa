@@ -1,18 +1,11 @@
 {
-  "version": 2,
-  "buildCommand": "npm run build:all",
-  "installCommand": "npm install && cd frontend && npm install && cd ../backend && npm install",
+  "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/dist",
+  "installCommand": "npm install && cd backend && npm install",
   "rewrites": [
     {
-      "source": "/api/:path*",
+      "source": "/api/(.*)",
       "destination": "/api"
     }
-  ],
-  "functions": {
-    "api/index.js": {
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  }
+  ]
 }
