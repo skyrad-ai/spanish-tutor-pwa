@@ -1,0 +1,14 @@
+{
+  "name": "spanish-tutor-pwa",
+  "version": "1.0.0",
+  "build": {
+    "command": "npm install && npm run build",
+    "output": "frontend/dist"
+  },
+  "start": {
+    "command": "cd backend && node src/server.js"
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
