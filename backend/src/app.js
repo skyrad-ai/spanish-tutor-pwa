@@ -37,7 +37,8 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY
 });
 
-const DATA_DIR = path.join(__dirname, '../data');
+// Use /tmp in serverless environments (Vercel), otherwise use local data directory
+const DATA_DIR = process.env.VERCEL ? '/tmp/data' : path.join(__dirname, '../data');
 const MISTAKES_FILE = path.join(DATA_DIR, 'mistakes.json');
 const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
 const STATS_FILE = path.join(DATA_DIR, 'stats.json');
